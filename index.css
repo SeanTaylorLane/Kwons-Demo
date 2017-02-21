@@ -1,0 +1,319 @@
+@charset "utf-8";
+
+* {
+  font-family: 'Source Sans Pro', sanf-serif;
+  box-sizing: border-box;
+}
+
+html{
+  -webkit-tap-highlight-color: rbga(0,0,0,0);
+}
+
+body {
+  font-size: 16px;
+  background: url("pixel_weave_@2X.png");
+  margin: 0;
+  padding: 0;
+}
+
+.desktop {
+  display: none;
+}
+
+h1 {
+  color: white;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 85px;
+  text-align: center;
+}
+
+.boxlogo {
+  background-color: #D02120;
+  margin: auto;
+  border-radius: 3%;
+  padding: 0 16px 0 16px;
+  width: 300px;
+  -webkit-user-select: none; /* Chrome, Opera, Safari */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+}
+
+p {
+  font-weight: 300;
+}
+
+h2 {
+  font-weight: 200;
+  color: white;
+  display: inline-block; /* Somehow prevents whitespace at bottom in Chrome... */
+}
+
+.box {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 4em;
+  width: 100%;
+  height: 250px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-user-select: none; /* Chrome, Opera, Safari */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #000;
+  opacity: 0.6;
+}
+
+.box:hover > .overlay {
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:#000;
+    opacity:0.8;
+}
+
+.box:focus > .overlay {
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:#000;
+    opacity:0.8;
+}
+
+.box:active > .overlay {
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:#000;
+    opacity:0.8;
+}
+
+.shoes {
+  background-image: url("shoes.jpg");
+  position: relative;
+  width: 100%;
+}
+
+.shirts {
+  background-image: url("shirts.jpg");
+}
+
+.deals {
+  background-image: url("deals.jpg");
+}
+
+.contact {
+  background-image: url("contact.jpg");
+}
+
+h6 {
+  font-weight: 200;
+  font-size: 1em;
+}
+
+.cred {
+  height: 1em;
+}
+
+@media only screen and (max-width: 382px) {
+  .box {
+    font-size: 3em;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .boxlogo {
+    width: 200px;
+  }
+
+  h1 {
+    font-size: 55px;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+
+body, html {
+  height: 100%;
+}
+
+body {
+  background: black;
+}
+
+  .desktop {
+    display: block;
+    min-height: 100%;
+    align-items: center;
+    display: flex;
+  }
+
+  #loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  margin: -30px 0 0 -30px;
+  border: 8px solid #000;
+  border-radius: 50%;
+  border-top: 8px solid #D02120;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
+#webpage-load {
+  display: none;
+  text-align: center;
+}
+
+.shoeschange-preload {
+  background: url("http://kwons.x10host.com/shoeschange-rev.jpg")
+}
+
+.shirtschange-preload {
+  background: url("http://kwons.x10host.com/shirtschange-rev2.jpg");
+}
+
+  .dealschange-preload {
+    background: url("http://kwons.x10host.com/dealschange.jpg");
+  }
+
+.contactchange-preload {
+  background: url("http://kwons.x10host.com/contactchange-rev.jpg");
+}
+
+#black-bg {
+  background: black;
+  z-index: 5;
+}
+
+  #center {
+    width: 100vw;
+    height: 100vh;
+    }
+
+  #fader {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 1);
+      z-index: 11;
+      -webkit-transition: background 0.5s; /* Safari */
+      transition: background 0.5s;
+    }
+
+  #shoeschange-bg, #shirtschange-bg, #dealschange-bg, #contactchange-bg {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      -webkit-transition: background 1s:; /* Safari */
+      transition: background 1s;
+      z-index: 4;
+    }
+
+  .greybar {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-user-select: none; /* Chrome, Opera, Safari */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px 0;
+    z-index: 10;
+    opacity: 1;
+  }
+
+  a {
+    margin: 0 10px;
+  }
+
+  li {
+    display: inline-block;
+    font-weight: 200;
+    font-size: 30px;
+    padding: 10px;
+    color: white;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 3%;
+    text-transform: uppercase;
+    -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
+    transition: background-color 1s;
+  }
+
+  li:hover {
+    background-color: #D02120;
+  }
+
+  ul {
+    text-align: center;
+    position: relative;
+    right: 25px;
+    margin-bottom: 40px;
+    margin-top: 0;
+  }
+
+  h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 100px;
+    display: inline;
+  }
+}

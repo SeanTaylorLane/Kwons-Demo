@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kwon's</title>
+  <link href="index.css" rel ="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
+</head>
+<body onload="loaderFunction()">
+<script>document.addEventListener("touchstart", fuction() {}, false);</script>
+
+<div class=mobile>
+<div class="boxlogo">
+  <h1>Kwon's</h1>
+</div>
+
+<div class="shoes box" aria-haspopup="true">
+  <div class="overlay">
+  <h2>Shoes</h2>
+  </div>
+</div>
+
+<div class="shirts box" aria-haspopup="true">
+  <div class="overlay">
+  <h2>Shirts</h2>
+  </div>
+</div>
+
+<div class="deals box" aria-haspopup="true">
+  <div class="overlay">
+  <h2>Deals</h2>
+ </div>
+</div>
+
+<div class="contact box" aria-haspopup="true">
+  <div class="overlay">
+  <h2>Contact</h2>
+  </div>
+</div>
+</div>
+
+<!-- Desktop--------------------->
+
+
+
+<div class="desktop">
+  <div class="shoeschange-preload">
+  <div class="shirtschange-preload">
+  <div class="dealschange-preload">
+  <div class="contactchange-preload">
+  <div id="black-bg">
+  <div id="shoeschange-bg">
+    <div id="shirtschange-bg">
+      <div id="dealschange-bg">
+        <div id="contactchange-bg">
+          <div id="fader">
+  <div id="center">
+
+    <div class="greybar">
+      <div id="loader"></div>
+      <div style="display:none;" id="webpage-load" class="animate-bottom">
+      <div class="boxlogo">
+      <h1>Kwon's</h1>
+    </div>
+    <ul>
+      <a href="#"><li id="shoeschange">Shoes</li></a>
+      <a href="#"><li id="shirtschange">Shirts</li></a>
+      <a href="#"><li id="dealschange">Deals</li></a>
+      <a href="#"><li id="contactchange">Contact</li></a>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var loaderTimeout;
+
+function loaderFunction() {
+    loaderTimeout = setTimeout(showPage, 1);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("webpage-load").style.display = "block";
+}
+</script>
+</div>
+
+
+<script>
+var changeTimeout
+
+function shoesFader() {
+    document.getElementById("shoeschange-bg").style.background ="";
+  }
+
+  function shirtsFader() {
+      document.getElementById("shirtschange-bg").style.background ="";
+    }
+
+    function dealsFader() {
+        document.getElementById("dealschange-bg").style.background ="";
+      }
+
+      function contactFader() {
+          document.getElementById("contactchange-bg").style.background ="";
+        }
+
+document.getElementById("shoeschange").addEventListener("mouseover", function() {
+  document.getElementById("shirtschange-bg").style.background ="";
+  document.getElementById("dealschange-bg").style.background ="";
+  document.getElementById("contactchange-bg").style.background ="";
+  clearTimeout(changeTimeout);
+  document.getElementById("fader").style.background = "rgba(0, 0, 0, 0.5)";
+  document.getElementById("shoeschange-bg").style.background = "url('http://kwons.x10host.com/shoeschange-rev.jpg')";
+}, false);
+document.getElementById("shoeschange").addEventListener("mouseout", function() {
+  document.getElementById("fader").style.background = "rgba(0, 0, 0, 1)";
+  changeTimeout = setTimeout(shoesFader, 300);
+}, false);
+/*document.getElementById("shoeschange").addEventListener("mouseout", function() {
+  changeTimeout = setTimeout(shoesFader, 500);
+} */
+
+document.getElementById("shirtschange").addEventListener("mouseover", function() {
+  document.getElementById("shoeschange-bg").style.background ="";
+  document.getElementById("dealschange-bg").style.background ="";
+  document.getElementById("contactchange-bg").style.background ="";
+  clearTimeout(changeTimeout);
+  document.getElementById("fader").style.background = "rgba(0, 0, 0, 0.5)";
+  document.getElementById("shirtschange-bg").style.background = "url('http://kwons.x10host.com/shirtschange-rev2.jpg')";
+
+}, false);
+document.getElementById("shirtschange").addEventListener("mouseout", function() {
+  document.getElementById("fader").style.background = "rgba(0, 0, 0, 1)";
+  changeTimeout = setTimeout(shirtsFader, 300);
+}, false);
+
+document.getElementById("dealschange").addEventListener("mouseover", function() {
+  document.getElementById("shoeschange-bg").style.background ="";
+  document.getElementById("shirtschange-bg").style.background ="";
+  document.getElementById("contactchange-bg").style.background ="";
+  clearTimeout(changeTimeout);
+  document.getElementById("fader").style.background = "rgba(0, 0, 0, 0.5)";
+  document.getElementById("dealschange-bg").style.background = "url('http://kwons.x10host.com/dealschange.jpg')";
+}, false);
+document.getElementById("dealschange").addEventListener("mouseout", function() {
+  document.getElementById("fader").style.background = "rgba(0, 0, 0, 1)";
+  changeTimeout = setTimeout(dealsFader, 300);
+}, false);
+
+document.getElementById("contactchange").addEventListener("mouseover", function() {
+  document.getElementById("shoeschange-bg").style.background ="";
+  document.getElementById("shirtschange-bg").style.background ="";
+  document.getElementById("dealschange-bg").style.background ="";
+  clearTimeout(changeTimeout);
+  document.getElementById("fader").style.background = "rgba(0, 0, 0, 0.5)";
+  document.getElementById("contactchange-bg").style.background = "url('http://kwons.x10host.com/contactchange-rev.jpg')";
+}, false);
+document.getElementById("contactchange").addEventListener("mouseout", function() {
+  document.getElementById("fader").style.background = "rgba(0, 0, 0, 1)";
+  changeTimeout = setTimeout(contactFader, 300);
+}, false);
+</script>
+
+<!--
+<div class="cred">
+  <h6>Design by Sean lane</h6>
+</div>
+-->
+
+</body>
+</html>
